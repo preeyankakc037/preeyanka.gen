@@ -1,0 +1,25 @@
+/* Import Montserrat font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+/* Apply Montserrat globally to the body */
+body {
+  font-family: 'Montserrat', sans-serif; /* Replaces Inter */
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Falling Stars Animation */
+@keyframes fall {
+  0% { transform: translateY(-10px); opacity: 1; }
+  100% { transform: translateY(110vh); opacity: 0; }
+}
+
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: fall linear infinite;
+}
