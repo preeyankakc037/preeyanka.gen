@@ -1,17 +1,15 @@
-// src/components/Sidebar.jsx
-import { FiHome, FiFileText } from "react-icons/fi"; // Feather Icons
-import { FaUserCircle } from "react-icons/fa"; // About icon
-import { GiHamburgerMenu } from "react-icons/gi"; // Blog icon
-import { MdOutlineCategory } from "react-icons/md"; // Projects icon
+import { FiHome, FiFileText } from "react-icons/fi";
+import { FaUserCircle } from "react-icons/fa";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { MdOutlineCategory } from "react-icons/md";
 import { NavLink, useLocation } from "react-router-dom";
 
 const navItems = [
-  { icon: FiHome, path: "/" },              // Home
-  { icon: FaUserCircle, path: "/about" },   // About
-  { icon: GiHamburgerMenu, path: "/blog" }, // Blog icon
-  { icon: MdOutlineCategory, path: "/projects" }, // Projects
-  { icon: FiFileText, path: "/resume" },    // Resume
-  // Removed the last icon (Share)
+  { icon: FiHome, path: "/" },
+  { icon: FaUserCircle, path: "/about" },
+  { icon: GiHamburgerMenu, path: "/blog" },
+  { icon: MdOutlineCategory, path: "/projects" },
+  { icon: FiFileText, path: "/resume" },
 ];
 
 export default function Sidebar() {
@@ -19,7 +17,7 @@ export default function Sidebar() {
 
   return (
     <aside
-      className="flex flex-col fixed h-screen ml-28 border-r z-10"
+      className="flex flex-col fixed h-screen ml-28 border-r z-[1000]" // Increased z-index
       style={{
         borderColor: "#2d3748",
         width: "64px",

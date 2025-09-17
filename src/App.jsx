@@ -6,7 +6,6 @@ import About from "./pages/About";
 import Blog from "./pages/Blog";
 import Projects from "./pages/Projects";
 import Resume from "./pages/Resume";
-import Contact from "./pages/Contact";
 
 function App() {
   return (
@@ -24,7 +23,7 @@ function App() {
               <Route path="/blog" element={<Blog />} />
               <Route path="/projects" element={<Projects />} />
               <Route path="/resume" element={<Resume />} />
-              <Route path="/contact" element={<Contact />} />
+          
             </Routes>
           </main>
         </div>

@@ -25,7 +25,7 @@ const PageWrapper = ({ children }) => {
   });
 
   return (
-    <div className="relative min-h-screen w-full bg-gradient-to-b from-gray-900 via-gray-900 to-gray-800 text-white overflow-hidden">
+<div className="relative min-h-screen w-full bg-[#0F172A] text-white overflow-hidden">
       {stars} {/* stars behind all content */}
       <div className="relative z-10">{children}</div> {/* page content above stars */}
     </div>

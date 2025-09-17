@@ -1,14 +1,15 @@
-/* Import Montserrat font from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
-
-/* Apply Montserrat globally to the body */
-body {
-  font-family: 'Montserrat', sans-serif; /* Replaces Inter */
-}
+/* Import Montserrat from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Apply Montserrat globally */
+body {
+  font-family: 'Montserrat', sans-serif;
+    @apply text-[#94A3B8];
+}
 
 /* Falling Stars Animation */
 @keyframes fall {
@@ -23,3 +24,4 @@ body {
   opacity: 0.8;
   animation: fall linear infinite;
 }
+
