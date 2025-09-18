@@ -7,7 +7,7 @@ Check out the live version: [preeyanka-genn.vercel.app](https://preeyanka-genn.v
 
 ## 🚀 About Me
 
-Hello! I’m **Preeyanka**, a passionate web developer based in Nepal. I love turning ideas into beautiful, functional websites and continually learning new technologies and best practices. This portfolio showcases some of my recent work in design, development, and creative coding.
+Hello! I’m **Preeyanka**, a passionate aspiring software developer based in Nepal. I love turning ideas into beautiful, functional websites and continually learning new technologies and best practices. This portfolio showcases some of my recent work in design, development, and creative coding.
 
 ---
 
