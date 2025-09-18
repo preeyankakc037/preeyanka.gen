@@ -37,7 +37,7 @@ export default function Sidebar() {
           }}
         >
           <img
-            src="src/assets/Profile.jpg"
+            src="/Profile.jpg"
             alt="Profile"
             className="w-full h-full object-cover"
           />
