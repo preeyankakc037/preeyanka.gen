@@ -1,16 +1,16 @@
-Preeyanka • Portfolio  
+# Preeyanka • Portfolio  
 
 🚀 A glimpse into my journey of creativity, learning, and innovation  
 
 Check out the live site here 👉 [preeyanka-genn.vercel.app](https://preeyanka-genn.vercel.app/)  
 
 
-About ✨  
+## About ✨  
 This portfolio is a reflection of who I am — a passionate Computer Science student exploring the world of AI, development, and creativity.  
 It’s more than just a website; it’s my digital space where I showcase my projects, resume, journey, achievements, hackathon experiences, and community contributions.  
 
 
-What You’ll Find 🏙️  
+## What You’ll Find 🏙️  
 🛠 Projects – A collection of works showcasing my technical skills and creativity  
 📄 Resume – My professional background and skill set at a glance  
 🌱 Journey & Achievements – Highlights of milestones and growth  
@@ -18,20 +18,23 @@ What You’ll Find 🏙️
 🎨 Creative Works – Designs and experiments that reflect my innovative side  
 
 
-Purpose 🎯  
+## Purpose 🎯  
 The goal of this portfolio is to create a minimal yet impactful representation of my professional and creative journey, making it easier for people to connect with me, explore my work, and see my growth over time.  
 
 
-Tech Stack ⚡  
-Frontend: HTML, CSS, JavaScript (React)  
-Deployment: Vercel  
+## Tech Stack ⚡  
+- Frontend: HTML, CSS, JavaScript (React)  
+- Deployment: Vercel  
 
 
-Connect With Me 🤝  
+## Connect With Me 🤝  
 I’m always open to collaboration, learning, and sharing ideas.  
-Portfolio: [preeyanka-genn.vercel.app](https://preeyanka-genn.vercel.app/)  
-LinkedIn:  
-GitHub:  
 
+🌐 Portfolio: [preeyanka-genn.vercel.app](https://preeyanka-genn.vercel.app/)  
+💼 LinkedIn:  
+🐙 GitHub:  
+
+
+---
 
 ✨ Just the beginning — stay tuned!  
