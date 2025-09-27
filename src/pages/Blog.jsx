@@ -3,12 +3,12 @@ import { useState } from "react";
 const blogPosts = [
   {
     id: 1,
-    date: "Aug 21, 2025",
+    date: "27 September 2025",
     source: "Preeyanka",
-    title: "Never Record Again: How Mantra Uses Supermemory To Rethink Video Creation",
-    excerpt: "External blog post from Preeyanka",
-    image: "/animated_ray.png",
-    link: "https://medium.com/@example1",
+    title: "Start Building Tech Projects🤟",
+    excerpt: "For Project Builders-2 min read",
+    image: "/Projects.jpg",
+    link: "https://medium.com/@preeyankakc.07/start-building-tech-projects-e0cc49bd0190",
     category: "AI",
   },
   {
