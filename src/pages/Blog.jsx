@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import PlaylistCard from "../components/PlaylistCard";
 
 const blogPosts = [
   {
@@ -6,7 +8,7 @@ const blogPosts = [
     date: "27 September 2025",
     source: "Preeyanka",
     title: "Start Building Tech Projects🤟",
-    excerpt: "For Project Builders-2 min read",
+    excerpt: "For Project Builders - 2 min read",
     image: "/Projects.jpg",
     link: "https://medium.com/@preeyankakc.07/start-building-tech-projects-e0cc49bd0190",
     category: "AI",
@@ -31,36 +33,6 @@ const blogPosts = [
     link: "https://medium.com/@example3",
     category: "Spirituality",
   },
-  {
-    id: 4,
-    date: "Jul 18, 2025",
-    source: "Preeyanka",
-    title: "Connecting with Your Higher Self: A Journey Beyond the Ego",
-    excerpt: "Exploring how to align with your higher self.",
-    image: "https://via.placeholder.com/300x150/2d3748/ffffff?text=Higher+Self",
-    link: "https://medium.com/@example4",
-    category: "Spirituality",
-  },
-  {
-    id: 5,
-    date: "Jul 5, 2025",
-    source: "Preeyanka",
-    title: "The Power of Storytelling in Content Creation",
-    excerpt: "Why storytelling makes content more powerful.",
-    image: "https://via.placeholder.com/300x150/2d3748/ffffff?text=Storytelling",
-    link: "https://medium.com/@example5",
-    category: "Content Creation",
-  },
-  {
-    id: 6,
-    date: "Jul 1, 2025",
-    source: "Preeyanka",
-    title: "Content Creation Strategies for the Modern Digital World",
-    excerpt: "Tips for consistent, authentic content.",
-    image: "https://via.placeholder.com/300x150/2d3748/ffffff?text=Strategies",
-    link: "https://medium.com/@example6",
-    category: "Content Creation",
-  },
 ];
 
 export default function Blog() {
@@ -72,66 +44,81 @@ export default function Blog() {
       : blogPosts.filter((post) => post.category === activeCategory);
 
   return (
-    <div className="min-h-screen text-gray-300 ml-18 pt-12 font-[Montserrat]">
-      <div className="max-w-6xl mx-auto">
-        <h1 className="text-3xl font-bold mb-4 text-white">My Blog</h1>
+    <div className="min-h-screen text-gray-300 ml-18 pt-12 pl-28 font-[Montserrat]">
+      <div className="max-w-7xl mx-auto flex gap-10">
+        {/* Left column (Blog posts) */}
+        <div className="flex-1">
+          <h1 className="text-3xl font-bold mb-4 text-white">My Blog</h1>
 
-        {/* Tabs Navbar */}
-        <nav className="flex gap-6 border-b border-gray-700 pb-2 pt-4 mb-8">
-          {["Latest", "AI", "Spirituality", "Content Creation"].map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setActiveCategory(tab)}
-              className={`text-gray-300 hover:text-white text-sm font-medium pb-2 transition-colors ${
-                activeCategory === tab ? "border-b-2 border-blue-500" : ""
-              }`}
-            >
-              {tab}
-            </button>
-          ))}
-        </nav>
+          {/* Tabs Navbar */}
+          <nav className="flex gap-6 border-b border-gray-700 pb-2 pt-4 mb-8">
+            {["Latest", "AI", "Spirituality", "Content Creation"].map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveCategory(tab)}
+                className={`text-gray-300 hover:text-white text-sm font-medium pb-2 transition-colors ${
+                  activeCategory === tab ? "border-b-2 border-blue-500" : ""
+                }`}
+              >
+                {tab}
+              </button>
+            ))}
+          </nav>
 
-        {/* Blog Posts Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {filteredPosts.map((post) => (
-            <article key={post.id} className="space-y-2">
-              <a href={post.link} target="_blank" rel="noopener noreferrer">
-                <img
-                  src={post.image}
-                  alt={post.title}
-                  className="w-full h-36 object-cover rounded"
-                />
-              </a>
-              <div className="bg-gray-800 p-3 rounded">
-                <div className="text-blue-400 text-xs mb-1">
-                  {post.date} • {post.source}
+          {/* Blog Posts */}
+          <div className="space-y-6">
+            {filteredPosts.map((post) => (
+              <article
+                key={post.id}
+                className="flex items-center gap-4 bg-gray-800 rounded-lg overflow-hidden hover:bg-gray-700 transition-colors p-3"
+              >
+                <a href={post.link} target="_blank" rel="noopener noreferrer">
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="w-[200px] h-[120px] object-cover rounded"
+                  />
+                </a>
+                <div className="flex-1">
+                  <div className="text-blue-400 text-xs mb-1">
+                    {post.date} • {post.source}
+                  </div>
+                  <h2 className="text-md font-semibold text-white hover:text-blue-400 transition-colors">
+                    <a
+                      href={post.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {post.title}
+                    </a>
+                  </h2>
+                  <p className="text-gray-400 text-sm">{post.excerpt}</p>
                 </div>
-                <h2 className="text-lg font-semibold mb-1 text-white">
-                  <a href={post.link} target="_blank" rel="noopener noreferrer">
-                    {post.title}
-                  </a>
-                </h2>
-                <p className="text-gray-400 text-sm">{post.excerpt}</p>
-              </div>
-            </article>
-          ))}
-        </div>
+              </article>
+            ))}
+          </div>
 
-    
-      {/* Footer */}
-<div className="mt-12 text-center">
+          {/* Footer CTA */}
+         {/* Footer CTA */}
+<div className="mt-6 flex mb-10">
   <a
     href="https://medium.com/@preeyankakc037"
     target="_blank"
     rel="noopener noreferrer"
-    className="inline-flex items-center gap-2 text-g font-medium hover:gap-3 transition-all"
+    className="text-gray-400 hover:text-blue-400 text-sm flex items-center gap-2 transition-colors"
   >
-    <span className="text-white">Find more of my posts on</span>
-    <span className="text-blue-500 ">Medium</span>
-    <span className="text-blue-500 animate-pulse">✨</span>
+    <span className="italic">Find more of my posts on</span>
+    <span className="font-semibold text-white">Medium</span>
+    <span className="text-blue-400">↗</span>
   </a>
 </div>
 
+        </div>
+
+        {/* Right column (Sidebar with PlaylistCard) */}
+        <div className="sticky top-20 pl-[50px]">
+          <PlaylistCard />
+        </div>
       </div>
     </div>
   );
