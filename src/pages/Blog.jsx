@@ -9,7 +9,7 @@ const blogPosts = [
     source: "Preeyanka",
     title: "Start Building Tech Projects🤟",
     excerpt: "For Project Builders - 2 min read",
-    image: "/Projects.jpg",
+    image: "/blog1.jpg",
     link: "https://medium.com/@preeyankakc.07/start-building-tech-projects-e0cc49bd0190",
     category: "AI",
   },
