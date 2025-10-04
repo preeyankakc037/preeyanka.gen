@@ -15,12 +15,12 @@ const blogPosts = [
   },
   {
     id: 2,
-    date: "Aug 31, 2025",
+    date: "3 June, 2025",
     source: "Preeyanka",
-    title: "Build Your Own Perplexity in 15 Minutes With Supermemory",
-    excerpt: "External blog post from Preeyanka",
-    image: "/animated_ray.png",
-    link: "https://medium.com/@example2",
+    title: "Build Bour Own RAG Based Chatbot",
+    excerpt: "For Project Builders - 2 min read",
+    image: "/blog2.png",
+    link: "https://medium.com/@preeyankakc.07/building-legalease-ai-nepals-first-legal-chatbot-for-the-people-7d6ae5bc0e75",
     category: "AI",
   },
   {
