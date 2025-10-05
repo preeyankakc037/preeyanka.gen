@@ -98,20 +98,6 @@ export default function Blog() {
             ))}
           </div>
 
-          {/* Footer CTA */}
-         {/* Footer CTA */}
-<div className="mt-6 flex mb-10">
-  <a
-    href="https://medium.com/@preeyankakc037"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-gray-400 hover:text-blue-400 text-sm flex items-center gap-2 transition-colors"
-  >
-    <span className="italic">Find more of my posts on</span>
-    <span className="font-semibold text-white">Medium</span>
-    <span className="text-blue-400">↗</span>
-  </a>
-</div>
 
         </div>
 
