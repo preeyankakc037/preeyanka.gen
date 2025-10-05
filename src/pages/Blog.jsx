@@ -25,12 +25,12 @@ const blogPosts = [
   },
   {
     id: 3,
-    date: "Jul 25, 2025",
+    date: "5 October, 2025",
     source: "Preeyanka",
-    title: "The Art of Mindful Living: Finding Peace in a Busy World",
-    excerpt: "How mindfulness helps reduce stress and build inner peace.",
-    image: "/animated_ray.png",
-    link: "https://medium.com/@example3",
+    title: "20 Things to Do Instead of Scrolling",
+    excerpt: "Build Habits That Transform Your Lifen - 3 min read",
+    image: "/blog3.png",
+    link: "https://medium.com/@preeyankakc.07/20-things-to-do-instead-of-scrolling-build-habits-that-transform-your-life-c4aaae989a04",
     category: "Spirituality",
   },
 ];
