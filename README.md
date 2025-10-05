@@ -1,6 +1,6 @@
 # Preeyanka • Portfolio  
 
-🚀 A glimpse into my journey of creativity, learning, and innovation  
+A glimpse into my journey of creativity, learning, and innovation.
 
 Check out the live site here 👉 [preeyanka-genn.vercel.app](https://preeyanka-genn.vercel.app/)  
 
