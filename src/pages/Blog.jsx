@@ -31,7 +31,7 @@ const blogPosts = [
     excerpt: "Build Habits That Transform Your Lifen - 3 min read",
     image: "/blog3.png",
     link: "https://medium.com/@preeyankakc.07/20-things-to-do-instead-of-scrolling-build-habits-that-transform-your-life-c4aaae989a04",
-    category: "Spirituality",
+    category: "Self-Help"
   },
 ];
 
@@ -52,7 +52,7 @@ export default function Blog() {
 
           {/* Tabs Navbar */}
           <nav className="flex gap-6 border-b border-gray-700 pb-2 pt-4 mb-8">
-            {["Latest", "AI", "Spirituality", "Content Creation"].map((tab) => (
+            {["Latest", "AI", "Self-Help", "Content Creation"].map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveCategory(tab)}
