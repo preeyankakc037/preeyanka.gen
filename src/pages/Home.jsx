@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
@@ -18,13 +18,20 @@ const PixelBoard = () => {
     "#ffffff",
   ];
 
-  // State Management: Handles the grid state and selected cell for color selection
-  const [grid, setGrid] = useState(
-    Array(rows)
-      .fill()
-      .map(() => Array(cols).fill("transparent"))
-  );
+  // State Management: Load grid from localStorage if available; otherwise, initialize transparent grid
+  const [grid, setGrid] = useState(() => {
+    const savedGrid = localStorage.getItem("pixelBoardGrid");
+    return savedGrid
+      ? JSON.parse(savedGrid)
+      : Array(rows).fill().map(() => Array(cols).fill("transparent"));
+  });
+
   const [selectedCell, setSelectedCell] = useState(null);
+
+  // useEffect: Save the grid state to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem("pixelBoardGrid", JSON.stringify(grid));
+  }, [grid]);
 
   // Event Handler: Captures click event on a grid cell to select it for coloring or erasing
   const handleCellClick = (row, col) => {
@@ -50,10 +57,13 @@ const PixelBoard = () => {
 
   // Event Handler: Resets the entire board to transparent and clears any selection
   const resetBoard = () => {
-    setGrid(Array(rows).fill().map(() => Array(cols).fill("transparent")));
+    const emptyGrid = Array(rows).fill().map(() => Array(cols).fill("transparent"));
+    setGrid(emptyGrid);
     setSelectedCell(null);
+    localStorage.removeItem("pixelBoardGrid"); // also remove saved state
   };
 
+  // Achievement Data
   const achievements = [
     { title: "Global IME BANK AI/ML Hackathon 2025", image: "/gbi.jpeg" },
     { title: "DevFest | Google 2025 ", image: "/DevFest _Google.png" },
@@ -68,37 +78,43 @@ const PixelBoard = () => {
     {
       icon: "/legalease_logo.png",
       title: "LegalEase Nepal",
-      description: "LegalEase Nepal is an AI-powered legal assistant that simplifies access to Nepal’s legal system by providing instant guidance, document analysis, and intelligent case-based search.",
+      description:
+        "LegalEase Nepal is an AI-powered legal assistant that simplifies access to Nepal’s legal system by providing instant guidance, document analysis, and intelligent case-based search.",
       githubLink: "https://github.com/preeyankakc037/LegalEase_Nepal_Chatbot",
     },
     {
       icon: "/hms.png",
       title: "Hospital M System",
-      description: "A complete hospital system to manage patients, doctors, and appointments interface for managing patient records, scheduling appointments, and generating reports without requiring a database",
+      description:
+        "A complete hospital system to manage patients, doctors, and appointments interface for managing patient records, scheduling appointments, and generating reports without requiring a database",
       githubLink: "https://github.com/preeyankakc037/Hospital-Mangement-System-",
     },
     {
       icon: "/smart.png",
       title: "Smart Power Monitoring",
-      description: "The Smart Industrial Power Monitoring System is an Arduino-based real-time power monitoring solution that helps track energy consumption, detect overloads, and optimize efficiency to reduce power waste & improve reliability.",
+      description:
+        "The Smart Industrial Power Monitoring System is an Arduino-based real-time power monitoring solution that helps track energy consumption, detect overloads, and optimize efficiency to reduce power waste & improve reliability.",
       githubLink: "https://github.com/preeyankakc037/Smart-Industrial-Power-Monitoring-System-",
     },
     {
       icon: "/dufy.png",
       title: "Dufy",
-      description: "Dufy is an AI-powered app that recommends music based on user descriptions. Using NLP and ML, it matches mood and context to deliver the perfect background track for creators..",
+      description:
+        "Dufy is an AI-powered app that recommends music based on user descriptions. Using NLP and ML, it matches mood and context to deliver the perfect background track for creators..",
       githubLink: "https://github.com/preeyankakc037/Dufy",
     },
     {
       icon: "/weatherapp.png",
       title: "Weather App",
-      description: "A simple and elegant weather application that shows real-time weather data for any city worldwide. Deployed on Render for smooth, fast, and reliable performance.",
+      description:
+        "A simple and elegant weather application that shows real-time weather data for any city worldwide. Deployed on Render for smooth, fast, and reliable performance.",
       githubLink: "https://github.com/preeyankakc037/weather_app_django",
     },
     {
       icon: "epic_logo.png",
       title: "Epic Stars",
-      description: " Epic Stars is a dynamic platform where students around the world can showcase their academic excellence, innovative projects, leadership skills, and extracurricular accomplishments. (Frontend)",
+      description:
+        " Epic Stars is a dynamic platform where students around the world can showcase their academic excellence, innovative projects, leadership skills, and extracurricular accomplishments. (Frontend)",
       githubLink: "https://github.com/preeyankakc037/Epic-Stars-Sem-1-Project",
     },
   ];
@@ -122,15 +138,15 @@ const PixelBoard = () => {
         )}
       </div>
 
-    {/* Reset Text */}
-<div className="mb-8 font-serif font-semibold">
-  <span
-    onClick={resetBoard}
-    className="cursor-pointer bg-gradient-to-r from-green-400 via-blue-500 to-orange-400 bg-clip-text text-transparent hover:underline"
-  >
-    RESET
-  </span>
-</div>
+      {/* Reset Text */}
+      <div className="mb-8 font-serif font-semibold">
+        <span
+          onClick={resetBoard}
+          className="cursor-pointer bg-gradient-to-r from-green-400 via-blue-500 to-orange-400 bg-clip-text text-transparent hover:underline"
+        >
+          RESET
+        </span>
+      </div>
 
       {/* Color Selection Popup */}
       {selectedCell && (
@@ -176,62 +192,56 @@ const PixelBoard = () => {
             <span className="text-blue-400">AI </span>
             <span className="text-white">and </span>
             <span className="text-green-400">Dev⚡ </span>
-            
           </h1>
 
-         <p className="text-gray-300 mt-3.5">
-  20 yr old exploring AI and shaping ideas into projects that push limits.  
-  <br /> Always learning by doing, breaking, and rebuilding until things click.  
-  <br /> For me, every project is an experiment, not just an assignment.  
-</p>
+          <p className="text-gray-300 mt-3.5">
+            20 yr old exploring AI and shaping ideas into projects that push limits.
+            <br /> Always learning by doing, breaking, and rebuilding until things click.
+            <br /> For me, every project is an experiment, not just an assignment.
+          </p>
 
           <p className="text-gray-300 mt-4 ">
-            Oh, and hackathons? Totally my thing. I see hackathons as the crucible  <br/>
-          where creativity and determination meet, shaping ideas into something <br/>
-          extraordinary under pressure.
+            Oh, and hackathons? Totally my thing. I see hackathons as the crucible
+            <br /> where creativity and determination meet, shaping ideas into something
+            <br /> extraordinary under pressure.
           </p>
 
           {/* Latest Projects Section */}
-<div className="mt-16">
-  <h2 className="text-xl font-bold text-white mb-6">Latest projects</h2>
-<div className="flex flex-wrap gap-x-6 gap-y-6 justify-start">
-
-
-    {projects.map((project, index) => (
-      <div
-        key={index}
-        className="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col justify-between w-[360px] h-60" // Added w-60 and h-60 for fixed size
-      >
-        <div className="flex items-center mb-2">
-          <img
-            src={project.icon}
-            alt={`${project.title} logo`}
-            className="w-10 h-10 rounded-full mr-4 object-cover"
-          />
-          <h3 className="text-xl font-semibold">{project.title}</h3>
-        </div>
-        <p className="text-gray-400 text-sm flex-grow mb-3">
-          {project.description}
-        </p>
-        <div className="flex justify-end">
-          <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
-            <FaArrowRight className="text-blue-400 hover:text-white transition-colors duration-200 cursor-pointer text-xl" />
-          </a>
-        </div>
-        <br/>
-        
-      </div>
-    ))}
-    <p>
-  See a list of all my projects {" "}
-  <Link to="/projects" className="text-blue-500 hover:underline">
-    On My Projects Page
-  </Link>
-</p>
-
-  </div>
-</div>
-
+          <div className="mt-16">
+            <h2 className="text-xl font-bold text-white mb-6">Latest projects</h2>
+            <div className="flex flex-wrap gap-x-6 gap-y-6 justify-start">
+              {projects.map((project, index) => (
+                <div
+                  key={index}
+                  className="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col justify-between w-[360px] h-60"
+                >
+                  <div className="flex items-center mb-2">
+                    <img
+                      src={project.icon}
+                      alt={`${project.title} logo`}
+                      className="w-10 h-10 rounded-full mr-4 object-cover"
+                    />
+                    <h3 className="text-xl font-semibold">{project.title}</h3>
+                  </div>
+                  <p className="text-gray-400 text-sm flex-grow mb-3">
+                    {project.description}
+                  </p>
+                  <div className="flex justify-end">
+                    <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
+                      <FaArrowRight className="text-blue-400 hover:text-white transition-colors duration-200 cursor-pointer text-xl" />
+                    </a>
+                  </div>
+                  <br />
+                </div>
+              ))}
+              <p>
+                See a list of all my projects{" "}
+                <Link to="/projects" className="text-blue-500 hover:underline">
+                  On My Projects Page
+                </Link>
+              </p>
+            </div>
+          </div>
 
           {/* Achievements Section */}
           <div className="mt-8">
@@ -270,7 +280,6 @@ const PixelBoard = () => {
               <a href="https://discord.com/users/ray_37" target="_blank" rel="noopener noreferrer">
                 <img src="https://img.icons8.com/ios-filled/36/1e3a8a/discord.png" alt="Discord" />
               </a>
-              
             </div>
             <h3 className="text-l text-white mb-2 mt-6">... i like creating content too!</h3>
             <div className="flex items-center space-x-6">
@@ -300,27 +309,25 @@ const PixelBoard = () => {
         </div>
 
         {/* Last Section */}
-       {/* Last Section */}
-<div className="ml-6 p-4 bg-gray-800 bg-opacity-70 rounded-lg text-white">
-  <p className="text-yellow-400 text-sm">👋 Thanks for visiting my site</p>
-  <p className="font-semibold">Glad to have you here.</p>
+        <div className="ml-6 p-4 bg-gray-800 bg-opacity-70 rounded-lg text-white">
+          <p className="text-yellow-400 text-sm">👋 Thanks for visiting my site</p>
+          <p className="font-semibold">Glad to have you here.</p>
 
-  {/* Guestbook */}
-  <a href="/guestbook" className="block text-blue-400 mt-2 ">
-    Leave a message on , my guestbook →
-  </a>
+          {/* Guestbook */}
+          <a href="/guestbook" className="block text-blue-400 mt-2 ">
+            Leave a message on my guestbook →
+          </a>
 
-  {/* Email */}
-  <a href="mailto:your-preeyankakc.07@gmail.com" className="block text-blue-400 mt-1 ">
-    Send an email →
-  </a>
+          {/* Email */}
+          <a href="mailto:your-preeyankakc.07@gmail.com" className="block text-blue-400 mt-1 ">
+            Send an email →
+          </a>
 
-  {/* GitHub Sponsor */}
-  <a href="https://github.com/preeyankakc037" target="_blank" rel="noopener noreferrer" className="block text-blue-400 mt-1 ">
-    See what I’m building →
-  </a>
-</div>
-
+          {/* GitHub Sponsor */}
+          <a href="https://github.com/preeyankakc037" target="_blank" rel="noopener noreferrer" className="block text-blue-400 mt-1 ">
+            See what I’m building →
+          </a>
+        </div>
       </div>
     </div>
   );
