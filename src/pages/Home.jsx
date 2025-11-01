@@ -65,12 +65,12 @@ const PixelBoard = () => {
 
   // Achievement Data
   const achievements = [
-    { title: "Global IME BANK AI/ML Hackathon 2025", image: "/gbi.jpeg" },
-    { title: "DevFest | Google 2025 ", image: "/DevFest _Google.png" },
+    { title: "Global IME BANK AI/ML Hackathon 2025", image: "/gbi.jpg" },
     { title: "Sachet Nari @1st Cohort Winner", image: "/sachet.jpg" },
-    { title: "Microsoft AI Skill Fest", image: "/microsoft.png" },
-    { title: "Nvidia AI Summit 2024", image: "nvida.png" },
-    { title: "Upcoming", image: "/animated_ray.png" },
+    { title: "Kalpabriksha | Member ", image: "/kpl.jpeg" },
+    { title: "Company Visits Intuji", image: "/intuji.jpeg" },
+    { title: "Sunway Innovation Fest 2025", image: "LegalEase.jpeg" },
+    { title: "Upcoming", image: "/DevFest _Google.png" },
   ];
 
   // Project data with logos and GitHub links
@@ -245,7 +245,7 @@ const PixelBoard = () => {
 
           {/* Achievements Section */}
           <div className="mt-8">
-            <h2 className="text-xl font-bold text-white mb-10">Achievements</h2>
+            <h2 className="text-xl font-bold text-white mb-10">Achievements & Social Work </h2>
             <div className="flex flex-wrap gap-4 mb-2 mt-2">
               {achievements.map((achievement, index) => (
                 <div
