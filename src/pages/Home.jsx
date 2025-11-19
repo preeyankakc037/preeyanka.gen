@@ -70,7 +70,7 @@ const PixelBoard = () => {
     { title: "Kalpabriksha | Member ", image: "/kpl.jpeg" },
     { title: "Company Visits Intuji", image: "/intuji.jpeg" },
     { title: "Sunway Innovation Fest 2025", image: "LegalEase.jpeg" },
-    { title: "Upcoming", image: "/DevFest _Google.png" },
+    { title: "Sunway Start FEST", image: "/sunway.jpeg" },
   ];
 
   // Project data with logos and GitHub links
