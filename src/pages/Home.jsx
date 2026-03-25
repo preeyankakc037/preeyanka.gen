@@ -65,11 +65,12 @@ const PixelBoard = () => {
 
   // Achievement Data
   const achievements = [
-    { title: "Global IME BANK AI/ML Hackathon 2025", image: "/gbi2.jpeg" },
+    
+    { title: "Techsprint Hackathon 2026 | Grand Winner", image: "Techsprint.jpg" },
     { title: "Sachet Nari @1st Cohort Winner", image: "/sachet.jpg" },
     { title: "MBMC_IDEAX 2025: 48 hours hackathon", image: "/mbmc.jpeg" },
+    { title: "Global IME BANK AI/ML Hackathon 2025", image: "/gbi2.jpeg" },
     { title: "Company Visits Intuji", image: "/intuji.jpeg" },
-    { title: "Kalpabriksha Member", image: "kpl.jpeg" },
     { title: "ICT Awards Fest 2025 (Project AI BIN)", image: "/ict.png" },
   ];
 
