@@ -362,7 +362,7 @@ const RightGarden = () => {
   const colWidth = 380;
   const xLeft = 5;    // pushed far left for dramatic S-curve swing
   const xRight = 340;  // pushed to far right edge
-  const flowerH = 285;  // spaced so only 2 flowers show per viewport height
+  const flowerH = 310;  // slightly longer curve between flowers
   const topPad = 36;
 
   const xPositions = [xRight, xLeft, xRight, xLeft, xRight, xLeft, xRight];
@@ -499,6 +499,9 @@ const PixelBoard = () => {
     { title: "Company Visits Intuji", image: "/intuji.jpeg" },
     { title: "Global IME BANK AI/ML Hackathon 2025", image: "/gbi2.jpeg" },
     { title: "ICT Awards Fest 2025 (Project AI BIN)", image: "/ict.png" },
+    { title: "Leapfrog Student Partnership Program 2026", image: "/leapfrog.JPG" },
+    { title: "Upcoming Achievement", image: null },
+    { title: "Upcoming Achievement", image: null },
   ];
 
   const projects = [
@@ -607,22 +610,55 @@ const PixelBoard = () => {
               gap: "16px",
             }}>
               {achievements.map((a, i) => (
-                <div key={i} style={{
-                  position: "relative", width: 240, height: 240,
-                  borderRadius: 10, overflow: "hidden",
-                  transition: "transform 0.3s",
-                }}
-                  onMouseEnter={e => e.currentTarget.style.transform = "translateY(-8px)"}
-                  onMouseLeave={e => e.currentTarget.style.transform = "translateY(0)"}
-                >
-                  <img src={a.image} alt={a.title} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
-                  <div style={{
-                    position: "absolute", bottom: 8, left: 8, right: 8,
-                    fontSize: 11, fontWeight: 600,
-                    background: "rgba(0,0,0,0.72)", color: "#fff",
-                    padding: "4px 8px", borderRadius: 6,
-                  }}>{a.title}</div>
-                </div>
+                a.image ? (
+                  /* Normal achievement card */
+                  <div key={i} style={{
+                    position: "relative", width: 240, height: 240,
+                    borderRadius: 10, overflow: "hidden",
+                    transition: "transform 0.3s",
+                  }}
+                    onMouseEnter={e => e.currentTarget.style.transform = "translateY(-8px)"}
+                    onMouseLeave={e => e.currentTarget.style.transform = "translateY(0)"}
+                  >
+                    <img src={a.image} alt={a.title} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                    <div style={{
+                      position: "absolute", bottom: 8, left: 8, right: 8,
+                      fontSize: 11, fontWeight: 600,
+                      background: "rgba(0,0,0,0.72)", color: "#fff",
+                      padding: "4px 8px", borderRadius: 6,
+                    }}>{a.title}</div>
+                  </div>
+                ) : (
+                  /* Upcoming placeholder card */
+                  <div key={i} style={{
+                    width: 240, height: 240, borderRadius: 10,
+                    border: "1.5px dashed rgba(148,163,184,0.25)",
+                    background: "rgba(30,41,59,0.4)",
+                    display: "flex", flexDirection: "column",
+                    alignItems: "center", justifyContent: "center",
+                    gap: 10, transition: "transform 0.3s",
+                  }}
+                    onMouseEnter={e => e.currentTarget.style.transform = "translateY(-8px)"}
+                    onMouseLeave={e => e.currentTarget.style.transform = "translateY(0)"}
+                  >
+                    <div style={{
+                      fontSize: 28, opacity: 0.18,
+                    }}>🏆</div>
+                    <span style={{
+                      fontSize: 9, fontWeight: 700, letterSpacing: "0.14em",
+                      textTransform: "uppercase",
+                      color: "rgba(148,163,184,0.5)",
+                      background: "rgba(148,163,184,0.08)",
+                      padding: "3px 10px", borderRadius: 20,
+                      border: "1px solid rgba(148,163,184,0.15)",
+                    }}>Upcoming</span>
+                    <p style={{
+                      fontSize: 11, color: "rgba(148,163,184,0.35)",
+                      textAlign: "center", margin: 0, padding: "0 16px",
+                      lineHeight: 1.5,
+                    }}>Something exciting<br />is on the way...</p>
+                  </div>
+                )
               ))}
             </div>
           </div>
