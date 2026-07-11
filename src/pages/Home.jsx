@@ -501,7 +501,7 @@ const PixelBoard = () => {
     { title: "ICT Awards Fest 2025 (Project AI BIN)", image: "/ict.png" },
     { title: "Leapfrog Student Partnership Program 2026", image: "/leapfrog.JPG" },
     { title: "Sachet Nari 3 months Ambassador Program Closing Address", image: "/Sachet nari.png" },
-    { title: "Upcoming Achievement", image: null },
+    { title: "Delivered a React.js Session at Islington College Kathmandu", image:"/react_session.jpeg" },
   ];
 
   const projects = [
